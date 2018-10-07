@@ -105,10 +105,11 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
                     catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
             }
         });
         Toast.makeText(mContext, "Ka-chick!", Toast.LENGTH_SHORT).show();
+        mCamera.stopPreview();
+        mCamera.startPreview();
     }
 }

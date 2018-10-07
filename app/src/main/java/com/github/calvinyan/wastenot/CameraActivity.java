@@ -33,7 +33,7 @@ public class CameraActivity extends AppCompatActivity {
         cameraView = new CameraView(this, camera);
 
         ((FrameLayout) findViewById(R.id.camera_frame)).addView(cameraView);
-        ((Button) findViewById(R.id.capture_button)).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.capture_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cameraView.takePicture();
