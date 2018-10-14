@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class UploadImageTask extends AsyncTask<Void, Void, String> {
 
-    private static String TAG = "UPLOADIMAGETASK";
+    private static String TAG = "UploadImageTask";
 
     private Context cameraActivity;
 
@@ -24,7 +24,7 @@ public class UploadImageTask extends AsyncTask<Void, Void, String> {
 
     private byte[] imageBytes;
 
-    private String requestURL = "67.180.10.45/image.html";
+    private String requestURL = "http://67.180.10.145/cgi/label_image.py";
     private HttpURLConnection httpConn;
     private DataOutputStream request;
     private final String boundary =  "*****";
@@ -65,7 +65,7 @@ public class UploadImageTask extends AsyncTask<Void, Void, String> {
      */
     public void addFilePart()
             throws IOException {
-        String fileName = uploadImage.getName();
+        String fileName = System.currentTimeMillis() + "";
         request.writeBytes(this.twoHyphens + this.boundary + this.crlf);
         request.writeBytes("Content-Disposition: form-data; name=\"image\";filename=\"" +
                 fileName + "\"" + this.crlf);

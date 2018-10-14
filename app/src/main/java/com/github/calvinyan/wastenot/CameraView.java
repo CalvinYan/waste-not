@@ -89,7 +89,8 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
         mCamera.takePicture(null, null, new Camera.PictureCallback() {
             @Override
             public void onPictureTaken(byte[] data, Camera camera) {
-                Log.d(TAG, "HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                mCamera.stopPreview();
+                mCamera.startPreview();
                 if (data != null) {
                     Log.d(TAG, "Image data received");
                     Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
@@ -98,8 +99,8 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
                     File savedImage = new File(path, System.currentTimeMillis() + ".jpg");
 
                     try {
-                        FileOutputStream outputStream=new FileOutputStream(savedImage);
-                        bitmap.compress(Bitmap.CompressFormat.JPEG,100, outputStream);
+                        FileOutputStream outputStream = new FileOutputStream(savedImage);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
                         outputStream.flush();
                         outputStream.close();
                         Log.d(TAG, "File save successful");
@@ -109,15 +110,13 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
 
                         // Pass the result on to the front-end activity
                         ((CameraActivity) mContext).setResult(classification);
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
         });
         Toast.makeText(mContext, "Ka-chick!", Toast.LENGTH_SHORT).show();
-        mCamera.stopPreview();
-        mCamera.startPreview();
+
     }
 }
