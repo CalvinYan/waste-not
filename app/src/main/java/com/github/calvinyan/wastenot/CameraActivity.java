@@ -25,6 +25,8 @@ public class CameraActivity extends AppCompatActivity {
     private Camera camera;
     private CameraView cameraView;
 
+    private String classificationResult = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,5 +42,11 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void setResult(String result) {
+        classificationResult = result;
+        Log.d(TAG, result);
+        // TODO: Change activities
     }
 }

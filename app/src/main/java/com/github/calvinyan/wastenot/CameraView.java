@@ -89,7 +89,9 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
         mCamera.takePicture(null, null, new Camera.PictureCallback() {
             @Override
             public void onPictureTaken(byte[] data, Camera camera) {
+                Log.d(TAG, "HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                 if (data != null) {
+                    Log.d(TAG, "Image data received");
                     Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
                     File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
                     path.mkdirs();
@@ -101,8 +103,14 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
                         outputStream.flush();
                         outputStream.close();
                         Log.d(TAG, "File save successful");
+
+                        // Upload the raw image format to the server for classification
+                        String classification = new UploadImageTask(mContext, data).execute().get();
+
+                        // Pass the result on to the front-end activity
+                        ((CameraActivity) mContext).setResult(classification);
                     }
-                    catch (IOException e) {
+                    catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
