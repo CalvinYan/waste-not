@@ -1,4 +1,52 @@
 <resources>
     <string name="app_name">WasteNot</string>
     <string name="capture_button">Capture</string>
+    <string name="classify_static">Your waste is most likely:</string>
+    <string name="classify_default">Error</string>
+    <string name="classify_cardboard">Cardboard</string>
+    <string name="classify_glass">Glass</string>
+    <string name="classify_metal">Metal</string>
+    <string name="classify_paper">Paper</string>
+    <string name="classify_plastic">Plastic</string>
+    <string name="classify_trash">Trash</string>
+    <string name="classify_unknown">Unknown</string>
+    <string name="result_positive">Recyclable</string>
+    <string name="result_negative">Not recyclable</string>
+    <string name="explanation_default">Aw, this wasn\'t supposed to happen! If you\'re seeing this,
+                                        either the server is down or there was an error with the app
+                                        displaying the result. Please try again at another time.</string>
+    <string name="explanation_cardboard">You can recycle this, but there is one condition; soiled
+                                        cardboard goes in the garbage. If this is a pizza or donut
+                                        box, for example. the grease makes recycling impossible.
+                                        Otherwise, just be sure to shake away any food crumbs, remove
+                                        packing tape and any plastic liners, and flatten the cardboard
+                                        if it\'s a box, and in the recycling it goes!</string>
+    <string name="explanation_glass">This is most likely a glass container, like a bottle, mug, or jar,
+                                    which you can basically recycle as is. Dump any residual food or
+                                    oil into the compost and give the glass a quick rinse.
+                                    If there\'s a metal cap or wine cork
+                                    on top, you can recycle that, but it must be removed from the
+                                    container first.</string>
+    <string name="explanation_metal">This one\'s an easy one! All metals are infinitely recyclable,
+                                    INCLUDING clean aluminum foil, with the sole exception of aerosol
+                                    cans that are partially full. Lightly rinse the object with water
+                                    and you\'re good to go.</string>
+    <string name="explanation_paper">Virtually all forms of paper can be recycled! Newspapers,
+                                    sticky notes, glossy magazines, colored paper, you name it. Make
+                                    sure the paper is dry, and metal parts like staples and paper clips
+                                    can be left on, although reusing paper clips is advisable. If
+                                    your paper contains sensitive information, consider covering it
+                                    with Sharpie instead of shredding it, which makes the paper last
+                                    a shorter time due to the smaller wood fibers.</string>
+    <string name="explanation_plastic">Hard plastic, like jugs, plastic bottles, and salad containers, are recyclable.
+                                        Lightly rinse out the contents and put the plastic cap back
+                                        on; it actually makes recyclers\' lives easier! Plastic wraps,
+                                        films, and bags are trickier. To recycle these, you have to
+                                        take them to storefront recycling bins at your nearest Walmart
+                                        or Target.</string>
+    <string name="explanation_trash">Sometimes there\'s just nothing you can do! Find the nearest
+                                    landfill bin and chuck this in."</string>
+    <string name="explanation_unknown">Sorry, our app was stumped on this one! Make sure the object
+                                        takes up the whole camera frame, no more, no less, and put
+                                        it on a well-lit, white surface for better results.</string>
 </resources>

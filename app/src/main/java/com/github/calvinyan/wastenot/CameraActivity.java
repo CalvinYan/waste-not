@@ -1,5 +1,6 @@
 package com.github.calvinyan.wastenot;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -47,6 +48,8 @@ public class CameraActivity extends AppCompatActivity {
     public void setResult(String result) {
         classificationResult = result;
         Log.d(TAG, result);
-        // TODO: Change activities
+        Intent showResult = new Intent(this, ResultActivity.class);
+        showResult.putExtra("Result", result);
+        this.startActivity(showResult);
     }
 }
