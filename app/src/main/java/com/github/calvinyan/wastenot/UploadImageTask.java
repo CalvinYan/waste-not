@@ -24,7 +24,7 @@ public class UploadImageTask extends AsyncTask<Void, Void, String> {
 
     private byte[] imageBytes;
 
-    private String requestURL = "http://67.180.10.145/cgi/label_image.py";
+    private String requestURL = "http://wastenot.ddns.net/cgi/label_image.py";
     private HttpURLConnection httpConn;
     private DataOutputStream request;
     private final String boundary =  "*****";
